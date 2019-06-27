@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import LoginForm from './LoginForm';
 
-export default (props) => {
+const Login = (props) => {
     const [state, setState] = useState({
         formData: {
             username: '',
@@ -10,8 +10,8 @@ export default (props) => {
             rememberMe: false
         },
         formErrors: {
-            username: '',
-            password: ''
+            username: null,
+            password: null
         }
     });
 
@@ -36,7 +36,10 @@ export default (props) => {
         <LoginForm 
             formData={state.formData} 
             formErrors={state.formErrors} 
-            onChange={onChange} 
+            onChange={onChange}
+            onClickToggleForm={props.onClickToggleForm} 
             onSubmit={onSubmit} />
     )
 };
+
+export default Login;

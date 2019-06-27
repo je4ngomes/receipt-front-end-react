@@ -1,15 +1,18 @@
 import React from 'react';
 import { Row, Col, TextInput, Checkbox, Button } from 'react-materialize';
 
-import '../../../App.css';
-
 const LoginForm = (props) => {
-    const { onChange, onSubmit, formData } = props;
+    const { 
+        onChange,
+        onSubmit,
+        formData,
+        onClickToggleForm
+    } = props;
     
     return (
-        <Col s={5} className="gradient__login z-depth-1">
+        <div className="gradient__form z-depth-1">
             <form onSubmit={onSubmit} style={{ padding: '20px', textAlign: 'center' }}>
-                <h2 className="white-text" style={{ fontSize: '32pt' }}>Login</h2>
+                <h2 className="white-text" style={{ fontSize: '32pt' }}>Entrar</h2>
 
                 <Row>
                     <Col s={10} offset='s1'>
@@ -68,12 +71,12 @@ const LoginForm = (props) => {
                 <Row>
                     <Col>
                         <label style={{ fontSize: '11pt' }}>
-                            Ou <a className="pink-text text-accent-2" href="#">Crie uma conta!</a>
+                            Ou <a className="pink-text text-accent-2" onClick={onClickToggleForm}>Crie uma conta!</a>
                         </label>
                     </Col>                        
                 </Row>
             </form>
-        </Col>
+        </div>
     );
 };
 
