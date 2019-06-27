@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from './node_modules/react';
+import { Col } from './node_modules/react-materialize';
 
 import LoginForm from './LoginForm';
+import login from '../../../images/login.png';
 
-export default (props) => {
+const Login = (props) => {
     const [state, setState] = useState({
         formData: {
             username: '',
@@ -10,8 +12,8 @@ export default (props) => {
             rememberMe: false
         },
         formErrors: {
-            username: '',
-            password: ''
+            username: null,
+            password: null
         }
     });
 
@@ -33,10 +35,20 @@ export default (props) => {
     };
 
     return (
-        <LoginForm 
-            formData={state.formData} 
-            formErrors={state.formErrors} 
-            onChange={onChange} 
-            onSubmit={onSubmit} />
+        <>
+            <Col s={4} offset='m1'>
+                <LoginForm 
+                    formData={state.formData} 
+                    formErrors={state.formErrors} 
+                    onChange={onChange}
+                    onClickToggleForm={props.onClickToggleForm} 
+                    onSubmit={onSubmit} />
+            </Col>
+            <Col s={4} offset='m1' style={{ marginTop: '4.5rem' }}>
+                <img className='floatingEffect' src={login} alt=""/>
+            </Col>
+        </>
     )
 };
+
+export default Login;

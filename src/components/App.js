@@ -1,11 +1,12 @@
 import React from 'react';
 
-import AuthenticationView from './Authentication/AuthenticationView';
+import '../App.css';
+import Authentication from './authentication/Authentication';
 
 function App() {
   return (
     <div className="App">
-        <AuthenticationView />
+        <Authentication />
     </div>
   );
 }
