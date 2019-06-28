@@ -11,7 +11,7 @@ const RegisterForm = (props) => {
     } = props;
 
     return (
-        <Col s={12} l={6} offset='l3' className="gradient__form z-depth-1">
+        <Col s={12} l={6} offset='l3' className="gradient_vicious_stance z-depth-1">
             <form onSubmit={onSubmit} style={{ padding: '20px 30px', textAlign: 'center' }}>
                 <h2 className="white-text" style={{ fontSize: '32pt' }}>Cadastrar</h2>
 

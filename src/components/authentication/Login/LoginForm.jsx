@@ -10,7 +10,7 @@ const LoginForm = (props) => {
     } = props;
     
     return (
-        <div className="gradient__form z-depth-1">
+        <div className="gradient_vicious_stance z-depth-1">
             <form onSubmit={onSubmit} style={{ padding: '20px', textAlign: 'center' }}>
                 <h2 className="white-text" style={{ fontSize: '32pt' }}>Entrar</h2>
 

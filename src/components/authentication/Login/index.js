@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col } from 'react-materialize';
 
 import LoginForm from './LoginForm';
-import login from '../../../images/login.png';
+import login from '../../../assets/images/login.png';
 
 const Login = (props) => {
     const [state, setState] = useState({
@@ -44,7 +44,7 @@ const Login = (props) => {
                     onClickToggleForm={props.onClickToggleForm} 
                     onSubmit={onSubmit} />
             </Col>
-            <Col className='hide-on-med-and-down' m={4} offset='m2' style={{ marginTop: '5.5rem' }}>
+            <Col className='hide-on-med-and-down' m={4} offset='m1' style={{ marginTop: '5.5rem' }}>
                 <img className='floatingEffect' src={login} alt=""/>
             </Col>
         </>

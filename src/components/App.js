@@ -1,12 +1,14 @@
 import React from 'react';
 
-import '../App.css';
+import '../assets/css/App.css';
 import Authentication from './authentication/Authentication';
+import Sidebar from './dashboard/Sidebar/Sidebar';
 
 function App() {
   return (
     <div className="App">
-        <Authentication />
+        <Sidebar />
+        n
     </div>
   );
 }
