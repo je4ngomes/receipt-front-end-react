@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 
 const styles = {
     root: {
@@ -7,15 +7,15 @@ const styles = {
         width: '243px',
         height: '207px'
     },
-    top_left_corner: {
+    top__left: {
         top: 0,
         left: 0
     },
-    bottom_left_corner: {
+    bottom__left: {
         bottom: 0,
         left: 0
     },
-    bottom_right_corner: {
+    bottom__right: {
         bottom: 0,
         right: 0
     }
@@ -27,7 +27,7 @@ const ImgCorner = ({ children }) => {
             {React.Children.map(children, (child, i) =>
                 React.cloneElement(child, {
                     key: i,
-                    style: { ...styles.root, ...styles[child.props.position] }
+                    style: { ...styles.root, ...styles[child.props.cornerPos] }
                 })
             )}
         </div>

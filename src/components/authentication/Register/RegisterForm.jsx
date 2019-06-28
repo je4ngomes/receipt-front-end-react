@@ -1,5 +1,5 @@
-import React from './node_modules/react';
-import { Row, Col, TextInput, Button } from './node_modules/react-materialize';
+import React from 'react';
+import { Row, Col, TextInput, Button } from 'react-materialize';
 
 
 const RegisterForm = (props) => {
@@ -11,7 +11,7 @@ const RegisterForm = (props) => {
     } = props;
 
     return (
-        <Col s={6} offset='m3' className="gradient__form z-depth-1">
+        <Col s={12} l={6} offset='l3' className="gradient__form z-depth-1">
             <form onSubmit={onSubmit} style={{ padding: '20px 30px', textAlign: 'center' }}>
                 <h2 className="white-text" style={{ fontSize: '32pt' }}>Cadastrar</h2>
 

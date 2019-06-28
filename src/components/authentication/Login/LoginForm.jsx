@@ -1,5 +1,5 @@
-import React from './node_modules/react';
-import { Row, Col, TextInput, Checkbox, Button } from './node_modules/react-materialize';
+import React from 'react';
+import { Row, Col, TextInput, Checkbox, Button } from 'react-materialize';
 
 const LoginForm = (props) => {
     const { 

@@ -1,5 +1,5 @@
-import React, { useState } from './node_modules/react';
-import { Container, Row } from './node_modules/react-materialize';
+import React, { useState } from 'react';
+import { Container, Row } from 'react-materialize';
 
 import topLeftCorner from '../../images/top-left-corner.png';
 import bottomLeftCorner from '../../images/bottom-left-corner.png';
@@ -19,16 +19,15 @@ const Authentication = (props) => {
     const showRegisterContent = () =>
         <Register onClickToggleForm={onClickToggleForm}/>;
 
-
     return (
         <Container style={{ width: '90%' }}>
             <Row>
                 {toggleForm ? showRegisterContent() : showLoginContent()}
             </Row>
             <ImgCorner>
-                <img src={topLeftCorner} position='top_left_corner' alt=""/>
-                <img src={bottomLeftCorner} position='bottom_left_corner' alt=""/>
-                <img src={bottomRightCorner} position='bottom_right_corner' alt=""/>
+                <img src={topLeftCorner} cornerPos='top__left' alt=""/>
+                <img src={bottomLeftCorner} cornerPos='bottom__left' alt=""/>
+                <img src={bottomRightCorner} cornerPos='bottom__right' alt=""/>
             </ImgCorner>
         </Container>
     );
