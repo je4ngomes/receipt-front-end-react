@@ -25,9 +25,9 @@ const Authentication = (props) => {
                 {toggleForm ? showRegisterContent() : showLoginContent()}
             </Row>
             <ImgCorner>
-                <img src={topLeftCorner} cornerPos='top__left' alt=""/>
-                <img src={bottomLeftCorner} cornerPos='bottom__left' alt=""/>
-                <img src={bottomRightCorner} cornerPos='bottom__right' alt=""/>
+                <img src={topLeftCorner} cornerPos='top__left'/>
+                <img src={bottomLeftCorner} cornerPos='bottom__left'/>
+                <img src={bottomRightCorner} cornerPos='bottom__right'/>
             </ImgCorner>
         </Container>
     );
