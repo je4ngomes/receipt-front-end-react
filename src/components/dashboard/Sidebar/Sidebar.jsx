@@ -3,31 +3,63 @@ import {
     SideNav,
     SideNavItem,
     Icon,
-    Divider
+    Button
  } from 'react-materialize';
+ import { makeStyles } from '@material-ui/styles';
 
  import userLogo from '../../../assets/images/user.jpg';
+ import userCover from '../../../assets/images/userCover.jpg';
+
+const useStyles = makeStyles({
+    root: {
+        '& a': {
+            color: '#fff !important'
+        },
+        '& i': {
+            margin: '0 20px 0 0 !important'
+        }
+    }
+});
 
 const Sidebar = () => {
+    const classes = useStyles();
+    const Trigger = <span style={{cursor: 'pointer', width: '30px'}}><Icon className='pink-text' waves small>menu</Icon></span>
+
     return (
-        <SideNav options={{ draggable: false }} className='gradient_vicious_stance'>
+        <SideNav trigger={Trigger} fixed={true} className={`${classes.root} gradient_vicious_stance`}>
             <SideNavItem userView user={{
-                background: 'https://placeimg.com/640/480/tech?t=1561729189960',
+                background: userCover,
                 image: userLogo,
-                name: 'John Doe'
+                name: 'John Doe',
+                email: 'john.doe@gmail.com'
             }} />
 
-            <SideNavItem href="#!icon">
-                <Icon className='pink-text text-darken-1'>home</Icon> <span className="white-text">Home</span>
+            <SideNavItem waves>
+                <Icon className='grey-text text-lighten-2'>home</Icon> Home
             </SideNavItem>
 
-            <SideNavItem divider></SideNavItem>
+            <SideNavItem className='pink divider' divider></SideNavItem>
 
             <SideNavItem subheader>
                <span className='grey-text'>Finaceiro</span>
             </SideNavItem>
             <SideNavItem waves href="#!third">
-                Third Link With Waves
+                <Icon className='purple-text text-lighten-2'>receipt</Icon> Despesas e Receitas
+            </SideNavItem>
+
+            <SideNavItem subheader>
+               <span className='grey-text'>Relatórios</span>
+            </SideNavItem>
+            <SideNavItem waves href="#!third">
+                <Icon className='green-text text-accent-3'>bar_chart</Icon> Gerar Despesas e Receitas
+            </SideNavItem>
+
+            <SideNavItem className='grey darken-2 divider' divider></SideNavItem>
+            <SideNavItem waves href="#!settings">
+                <Icon className='blue-text text-lighten-1'>settings</Icon> Configurações
+            </SideNavItem>
+            <SideNavItem waves href="#!logout">
+                <Icon className='red-text text-lighten-1'>exit_to_app</Icon> Sair
             </SideNavItem>
         </SideNav>
     );
