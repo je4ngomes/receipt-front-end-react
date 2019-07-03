@@ -4,25 +4,13 @@ import { Container, Row } from 'react-materialize';
 import topLeftCorner from '../../assets/images/top-left-corner.png';
 import bottomLeftCorner from '../../assets/images/bottom-left-corner.png';
 import bottomRightCorner from '../../assets/images/bottom-right-corner.png';
-import Login from './Login';
-import Register from './Register';
 import ImgCorner from './ImgCorner';
 
 const Authentication = (props) => {
-    const [toggleForm, setToggleForm] = useState(false);
-
-    const onClickToggleForm = () => setToggleForm(!toggleForm);
-    
-    const showLoginContent = () =>
-        <Login onClickToggleForm={onClickToggleForm}/>;
-
-    const showRegisterContent = () =>
-        <Register onClickToggleForm={onClickToggleForm}/>;
-
     return (
         <Container style={{ width: '90%' }}>
             <Row>
-                {toggleForm ? showRegisterContent() : showLoginContent()}
+                {props.children}
             </Row>
             <ImgCorner>
                 <img src={topLeftCorner} cornerPos='top__left'/>

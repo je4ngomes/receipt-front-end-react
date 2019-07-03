@@ -1,12 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col, TextInput, Checkbox, Button } from 'react-materialize';
 
 const LoginForm = (props) => {
     const { 
         onChange,
         onSubmit,
-        formData,
-        onClickToggleForm
+        formData
     } = props;
     
     return (
@@ -72,7 +72,7 @@ const LoginForm = (props) => {
                 <Row>
                     <Col>
                         <label style={{ fontSize: '11pt' }}>
-                            Ou <span className="pink-text text-accent-2" onClick={onClickToggleForm}>Crie uma conta!</span>
+                            Ou <Link to='/auth/register' className="pink-text text-accent-2">Crie uma conta!</Link>
                         </label>
                     </Col>                        
                 </Row>

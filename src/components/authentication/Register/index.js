@@ -41,8 +41,7 @@ const Register =(props) => {
         <RegisterForm 
             onChange={onChange}
             onSubmit={onSubmit}
-            formData={state.formData}
-            onClickToggleForm={props.onClickToggleForm}/>
+            formData={state.formData}/>
     );
 };
 

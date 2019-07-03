@@ -18,12 +18,13 @@ const Login = (props) => {
     });
 
     const onChange = ({ target }) => {
+        const { name, value, checked } = target;
         const isNotCheckBox = target.type !== 'checkbox';
 
         setState({ 
             formData: { 
                 ...state.formData, 
-                [target.name]: isNotCheckBox ? target.value : target.checked 
+                [name]: isNotCheckBox ? value : checked 
             } 
         }); 
     };
@@ -41,7 +42,6 @@ const Login = (props) => {
                     formData={state.formData} 
                     formErrors={state.formErrors} 
                     onChange={onChange}
-                    onClickToggleForm={props.onClickToggleForm} 
                     onSubmit={onSubmit} />
             </Col>
             <Col className='hide-on-med-and-down' m={4} offset='m1' style={{ marginTop: '5.5rem' }}>

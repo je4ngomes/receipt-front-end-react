@@ -1,17 +1,21 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { useAxios } from './hooks/useAxios';
-
-// import './assets/css/App.css';
-// import Authentication from './components/authentication/Authentication';
-// import Sidebar from './components/dashboard/Sidebar/Sidebar';
+import './assets/css/App.css';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import DashboardPage from './pages/DashboardPage';
 
 function App() {
-    const { data, isLoading } = useAxios('http://numbersapi.com/random/trivia');
-
     return (
         <div className="App">
-            <p  className='white-text'>{isLoading ? 'loading...' : data}</p>
+            <BrowserRouter>
+                <Switch>
+                    <Route path='/auth/login' component={LoginPage}/>
+                    <Route path='/auth/register' component={RegisterPage}/>
+                    <Route path='/dashboard' component={DashboardPage}/>
+                </Switch>
+            </BrowserRouter>
         </div>
     );
 }

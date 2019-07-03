@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col, TextInput, Button } from 'react-materialize';
 
 
@@ -97,7 +98,7 @@ const RegisterForm = (props) => {
                 <Row>
                     <Col>
                         <label style={{ fontSize: '11pt' }}>
-                            Ou <span className="pink-text text-accent-2" onClick={onClickToggleForm}>Entrar</span>
+                            Ou <Link to='/auth/login' className="pink-text text-accent-2">Entrar</Link>
                         </label>
                     </Col>                        
                 </Row>

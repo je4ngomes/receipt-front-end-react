@@ -2,8 +2,7 @@ import React from 'react';
 import { 
     SideNav,
     SideNavItem,
-    Icon,
-    Button
+    Icon
  } from 'react-materialize';
  import { makeStyles } from '@material-ui/styles';
 
