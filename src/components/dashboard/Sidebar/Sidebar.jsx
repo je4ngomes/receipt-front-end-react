@@ -37,7 +37,7 @@ const Sidebar = () => {
                 <Icon className='grey-text text-lighten-2'>home</Icon> Home
             </SideNavItem>
 
-            <SideNavItem className='pink divider' divider></SideNavItem>
+            <SideNavItem className='purple divider' divider></SideNavItem>
 
             <SideNavItem subheader>
                <span className='grey-text'>Finaceiro</span>

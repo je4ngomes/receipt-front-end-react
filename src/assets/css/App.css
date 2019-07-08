@@ -1,3 +1,17 @@
+.container {
+    width: 90%;
+}
+
+header, #root, footer {
+	padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+	header, #root, footer {
+		padding-left: 0;
+	}
+}
+
 label span {
     cursor: pointer;
 }

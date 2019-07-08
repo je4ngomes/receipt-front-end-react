@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Authentication from '../components/authentication/Authentication';
-import Register from '../components/authentication/Register';
+import Authentication from '../components/auth/Authentication';
+import Register from '../components/auth/Register';
 
 
 

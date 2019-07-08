@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Authentication from '../components/authentication/Authentication';
-import Login from '../components/authentication/Login';
+import Authentication from '../components/auth/Authentication';
+import Login from '../components/auth/Login';
 
 const LoginPage = () => 
     <Authentication>
