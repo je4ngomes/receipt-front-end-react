@@ -45,12 +45,8 @@ const Sidebar = () => {
             <SideNavItem waves href="#!third">
                 <Icon className='purple-text text-lighten-2'>receipt</Icon> Despesas e Receitas
             </SideNavItem>
-
-            <SideNavItem subheader>
-               <span className='grey-text'>Relatórios</span>
-            </SideNavItem>
             <SideNavItem waves href="#!third">
-                <Icon className='green-text text-accent-3'>bar_chart</Icon> Gerar Despesas e Receitas
+                <Icon className='green-text text-accent-3'>bar_chart</Icon> Relatório
             </SideNavItem>
 
             <SideNavItem className='grey darken-2 divider' divider></SideNavItem>
