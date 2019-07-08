@@ -6,7 +6,6 @@ import NavegationBar from '../components/shared/Navbar/NavegationBar';
 const DashboardPage = () => {
     return (
         <div>
-            {/* <NavegationBar /> */}
             <Sidebar />
             c
         </div>

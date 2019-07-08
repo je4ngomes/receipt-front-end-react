@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 const Sidebar = () => {
     const classes = useStyles();
-    const Trigger = <span style={{cursor: 'pointer', width: '30px'}}><Icon className='pink-text' waves small>menu</Icon></span>
+    const Trigger = <span style={{cursor: 'pointer', width: '30px', marginLeft: '10px'}}><Icon className='pink-text' waves small>menu</Icon></span>
 
     return (
         <SideNav trigger={Trigger} fixed={true} className={`${classes.root} gradient_vicious_stance`}>
@@ -45,12 +45,8 @@ const Sidebar = () => {
             <SideNavItem waves href="#!third">
                 <Icon className='purple-text text-lighten-2'>receipt</Icon> Despesas e Receitas
             </SideNavItem>
-
-            <SideNavItem subheader>
-               <span className='grey-text'>Relatórios</span>
-            </SideNavItem>
             <SideNavItem waves href="#!third">
-                <Icon className='green-text text-accent-3'>bar_chart</Icon> Gerar Despesas e Receitas
+                <Icon className='green-text text-accent-3'>bar_chart</Icon> Relatório Financeiro
             </SideNavItem>
 
             <SideNavItem className='grey darken-2 divider' divider></SideNavItem>
