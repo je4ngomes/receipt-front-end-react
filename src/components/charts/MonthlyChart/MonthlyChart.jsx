@@ -3,7 +3,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend
 } from 'recharts';
 
-import PanelChartContainer from '../PanelChartContainer';
+import PanelChartContainer from '../../shared/PanelChartContainer';
 
 const data = [
     {

@@ -1,17 +1,17 @@
 import React from 'react';
 
-import PanelContainer from '../shared/PanelContainer';
+import PanelContainer from './PanelContainer';
 
 const PanelChartContainer = ({ 
     title, 
     children, 
-    titleSize = '12pt', 
+    titleSize = '16pt', 
     titleColor = 'deep-purple-text text-lighten-3'
 }) => {
     return (
         <PanelContainer>
             <h5 
-                style={{ fontSize: {titleSize} }} 
+                style={{ fontSize: titleSize }} 
                 className={`center-align ${titleColor}`}>
                 {title}
             </h5>
