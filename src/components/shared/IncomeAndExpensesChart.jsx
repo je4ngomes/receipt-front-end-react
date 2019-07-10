@@ -2,16 +2,17 @@ import React from 'react';
 import {
   PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer
 } from 'recharts';
-import PanelChartContainer from './PanelChartContainer';
+import PanelContainer from './PanelContainer';
+import LiquidLoader from './LiquidLoader';
+import { renderLoader, customLegendColor } from '../../utils/util';
 
-const IncomeAndExpensesChart = ({ title, data }) => {
-    const COLORS = ['#673ab7', '#9575cd'];
-    const legendColor = (value) => 
-        <span style={{ color: '#fff' }}>{value}</span>
+const IncomeAndExpensesChart = ({ title, data, isLoading }) => {
+    const COLORS = ['#673ab7', '#9575cd'];    
     
     return (
-        <PanelChartContainer title={title}>
+        <PanelContainer title={title}>
             <div style={{ width: '100%', height: 280 }}>
+                { isLoading ? renderLoader(LiquidLoader) :
                 <ResponsiveContainer>
                     <PieChart>
                         <Pie
@@ -28,11 +29,11 @@ const IncomeAndExpensesChart = ({ title, data }) => {
                             }
                         </Pie>
                         <Tooltip />
-                        <Legend formatter={legendColor} />
+                        <Legend formatter={customLegendColor} />
                     </PieChart>
-                </ResponsiveContainer>
+                </ResponsiveContainer>}
             </div>
-        </PanelChartContainer>
+        </PanelContainer>
     );
 };
 

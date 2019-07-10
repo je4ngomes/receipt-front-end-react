@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Dropdown, Button, Icon } from 'react-materialize';
 
-const SelectYear = () => {
+const SelectYear = ({ style }) => {
     const [{ 
         isInputEditable, 
         date 
@@ -48,19 +48,22 @@ const SelectYear = () => {
 
 
     return (
-        isInputEditable ? renderInputForm() :
-        <Dropdown
-            trigger={
-                <Button className='deep-purple' style={{ margin: '-5px 0 0 5px', width: '125px', fontSize: '11pt' }}>
-                    {date}
-                    <Icon right>arrow_drop_down</Icon>
-                </Button>
-            }
-        >
-            <a className='purple-text' onClick={handleClick(dec)} href='#prevYear'>Ano Anterior</a>
-            <a className='purple-text' onClick={handleClick(inc)} href='#nextYear'>Próximo Ano</a>
-            <a className='purple-text' onClick={handleTypeYear} href='#typeYear'>Digitar Ano</a>
-        </Dropdown>
+        <div style={style}>
+            {isInputEditable 
+                ? renderInputForm() 
+                : <Dropdown
+                    trigger={
+                        <Button className='deep-purple lighten-1' style={{ margin: '-5px 0 0 5px', width: '125px', fontSize: '11pt' }}>
+                            {date}
+                            <Icon right>arrow_drop_down</Icon>
+                        </Button>
+                    }
+                >
+                    <a className='purple-text' onClick={handleClick(dec)} href='#prevYear'>Ano Anterior</a>
+                    <a className='purple-text' onClick={handleClick(inc)} href='#nextYear'>Próximo Ano</a>
+                    <a className='purple-text' onClick={handleTypeYear} href='#typeYear'>Digitar Ano</a>
+                </Dropdown>}
+        </div>
     );
 };
 

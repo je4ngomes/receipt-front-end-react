@@ -1,6 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-const PanelContainer = ({ children, bg='#232a33' }) => (
+const PanelContainer = ({ 
+    title, 
+    titleSize = '16pt', 
+    titleColor = 'deep-purple-text text-lighten-3', 
+    children,
+    alignTitle = 'center', 
+    bg = '#232a33'
+}) => (
     <div 
         className='z-depth-1' 
         style={{ 
@@ -8,7 +15,16 @@ const PanelContainer = ({ children, bg='#232a33' }) => (
             padding: '10px', 
             borderRadius: '5px' 
     }}>
-        {children}
+        {title && (
+            <h5 
+                style={{ fontSize: titleSize }} 
+                className={`${alignTitle}-align ${titleColor}`}>
+                {title}
+            </h5>
+        )}
+        <div>
+            {children}
+        </div> 
     </div>
 );
 

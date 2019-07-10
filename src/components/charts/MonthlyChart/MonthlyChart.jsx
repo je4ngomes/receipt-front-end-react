@@ -3,7 +3,8 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend
 } from 'recharts';
 
-import PanelChartContainer from '../../shared/PanelChartContainer';
+import PanelContainer from '../../shared/PanelContainer';
+import { customLegendColor } from '../../../utils/util';
 
 const data = [
     {
@@ -45,11 +46,9 @@ const data = [
 ];
 
 const MonthlyChart = () => {
-    const legendColor = (value) => 
-        <span style={{ color: '#fff' }}>{value}</span>
 
     return (
-        <PanelChartContainer title='Monitoramento Financeiro'>
+        <PanelContainer title='Monitoramento Financeiro'>
             <BarChart
                 width={900}
                 height={300}
@@ -61,11 +60,11 @@ const MonthlyChart = () => {
                     <XAxis tick={{ fill: '#fff' }} dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                    <Legend formatter={legendColor} />
+                    <Legend formatter={customLegendColor} />
                     <Bar dataKey="receita" fill="#673ab7"/>
                     <Bar dataKey="despesa" fill="#9575cd"/>
             </BarChart>
-        </PanelChartContainer>
+        </PanelContainer>
     );
 };
 
