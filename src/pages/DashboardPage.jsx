@@ -17,13 +17,13 @@ const DashboardPage = () => {
             <Header title='Dashboard' />
             <Container>
                 <Row>
-                    <Col m='4'>
+                    <Col s='12' m='6' l='4'>
                         <IncomeChart />
                     </Col>
-                    <Col m='4'>
+                    <Col s='12' m='6' l='4'>
                         <ExpensesChart />
                     </Col>
-                    <Col m='4'>
+                    <Col s='12' m='6' l='4'>
                         <RapidAccess />
                     </Col>
                 </Row>

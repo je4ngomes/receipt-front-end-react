@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 const Sidebar = () => {
     const classes = useStyles();
-    const Trigger = <span style={{cursor: 'pointer', width: '30px', marginLeft: '10px'}}><Icon className='pink-text' waves small>menu</Icon></span>
+    const Trigger = <span style={{cursor: 'pointer', width: '30px', marginLeft: '10px'}}><Icon className='deep-purple-text text-lighten-2' waves small>menu</Icon></span>
 
     return (
         <SideNav trigger={Trigger} fixed={true} className={`${classes.root} gradient_vicious_stance`}>
@@ -54,7 +54,7 @@ const Sidebar = () => {
                 <Icon className='blue-text text-lighten-1'>settings</Icon> Configurações
             </SideNavItem>
             <SideNavItem waves href="#!logout">
-                <Icon className='red-text text-lighten-1'>exit_to_app</Icon> Sair
+                <Icon className='red-text text-lighten-1'>power_settings_new</Icon> Sair
             </SideNavItem>
         </SideNav>
     );

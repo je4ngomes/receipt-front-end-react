@@ -3,16 +3,16 @@ import {
   PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer
 } from 'recharts';
 import PanelContainer from './PanelContainer';
-import LiquidLoader from './LiquidLoader';
+import SpinnerLiquid from './SpinnerLiquid';
 import { renderLoader, customLegendColor } from '../../utils/util';
 
-const IncomeAndExpensesChart = ({ title, data, isLoading }) => {
+const IncomeAndExpensesChart = ({ title, data, isLoading =true }) => {
     const COLORS = ['#673ab7', '#9575cd'];    
     
     return (
         <PanelContainer title={title}>
             <div style={{ width: '100%', height: 280 }}>
-                { isLoading ? renderLoader(LiquidLoader) :
+                { isLoading ? renderLoader(SpinnerLiquid) :
                 <ResponsiveContainer>
                     <PieChart>
                         <Pie
