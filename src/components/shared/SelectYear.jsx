@@ -19,11 +19,12 @@ const SelectYear = ({ style }) => {
                 width: '70px',
                 background: '#29323c',
                 padding: '5px',
+                color: '#b39ddb',
                 fontSize: '12pt',
                 borderRadius: 0,
                 border: 'none'
             }} 
-            className='browser-default purple-text text-lighten-3'
+            className='browser-default'
             autoFocus 
             ref={inputEl} 
             defaultValue={date} 

@@ -6,7 +6,7 @@ import PanelContainer from './PanelContainer';
 import SpinnerLiquid from './SpinnerLiquid';
 import { renderLoader, customLegendColor } from '../../utils/util';
 
-const IncomeAndExpensesChart = ({ title, data, isLoading =true }) => {
+const IncomeAndExpensesChart = ({ title, data, isLoading }) => {
     const COLORS = ['#673ab7', '#9575cd'];    
     
     return (

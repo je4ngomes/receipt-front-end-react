@@ -51,7 +51,7 @@ const LoginForm = (props) => {
                     </Col>
                     <Col s={6}>
                         <label style={{ fontSize: '11pt' }}>
-                            <span className="pink-text text-accent-2">Esqueceu a senha?</span>
+                            <span className="deep-purple-text text-lighten-3">Esqueceu a senha?</span>
                         </label>
                     </Col>
                 </Row>
@@ -62,7 +62,7 @@ const LoginForm = (props) => {
                             style={{ width: '16rem', height: '3rem' }} 
                             flat
                             waves='light' 
-                            className="pink white-text"
+                            className="deep-purple lighten-1 white-text"
                             type="submit">
                             Entrar
                         </Button>
@@ -72,7 +72,7 @@ const LoginForm = (props) => {
                 <Row>
                     <Col>
                         <label style={{ fontSize: '11pt' }}>
-                            Ou <Link to='/auth/register' className="pink-text text-accent-2">Crie uma conta!</Link>
+                            Ou <Link to='/auth/register' className="deep-purple-text text-lighten-3">Crie uma conta!</Link>
                         </label>
                     </Col>                        
                 </Row>

@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Authentication from '../components/auth/Authentication';
+import AuthenticationContainer from '../components/shared/AuthenticationContainer';
 import Register from '../components/auth/Register';
 
 
 
 const RegisterPage = () => {
     return (
-        <Authentication>
+        <AuthenticationContainer>
             <Register />
-        </Authentication>
+        </AuthenticationContainer>
     )
 }
 

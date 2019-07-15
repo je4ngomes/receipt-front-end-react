@@ -31,6 +31,6 @@ const RapidAccess = (props) => {
             </Collection>
         </PanelContainer>
     );
-}
+};
 
 export default RapidAccess;

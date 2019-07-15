@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Authentication from '../components/auth/Authentication';
+import AuthenticationContainer from '../components/shared/AuthenticationContainer';
 import Login from '../components/auth/Login';
 
 const LoginPage = () => 
-    <Authentication>
+    <AuthenticationContainer>
         <Login />
-    </Authentication>
+    </AuthenticationContainer>
 
 export default LoginPage;

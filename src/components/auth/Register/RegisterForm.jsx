@@ -7,8 +7,7 @@ const RegisterForm = (props) => {
     const { 
         onChange,
         onSubmit,
-        formData,
-        onClickToggleForm
+        formData
     } = props;
 
     return (
@@ -88,7 +87,7 @@ const RegisterForm = (props) => {
                             style={{ width: '16rem', height: '3rem' }} 
                             flat
                             waves='light' 
-                            className="pink white-text"
+                            className="deep-purple lighten-1 white-text"
                             type="submit">
                             Registrar
                         </Button>
@@ -98,7 +97,7 @@ const RegisterForm = (props) => {
                 <Row>
                     <Col>
                         <label style={{ fontSize: '11pt' }}>
-                            Ou <Link to='/auth/login' className="pink-text text-accent-2">Entrar</Link>
+                            Ou <Link to='/auth/login' className="deep-purple-text text-lighten-3">Entrar</Link>
                         </label>
                     </Col>                        
                 </Row>
