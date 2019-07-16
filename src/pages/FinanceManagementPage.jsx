@@ -5,7 +5,7 @@ import Sidebar from '../components/shared/Sidebar';
 import Header from '../components/shared/Header';
 // import Footer from '../components/shared/Footer';
 import TabSwitch from '../components/shared/TabSwitch';
-import PanelContainer from '../components/shared/PanelContainer';
+import PaneContainer from '../components/shared/PaneContainer';
 import IncomeCostTabContent from '../components/financeManagement/IncomeCostTabContent';
 
 const FinanceManagementPage = () => {
@@ -16,7 +16,7 @@ const FinanceManagementPage = () => {
             <Container style={{ width: '98%' }}>
                 <Row>
                     <Col s={12}>
-                        <PanelContainer>
+                        <PaneContainer>
                             <TabSwitch tabsTitle={[
                                 'Receitas', 
                                 'Despesas Fixas', 
@@ -28,7 +28,7 @@ const FinanceManagementPage = () => {
                                 <IncomeCostTabContent />
                                 <IncomeCostTabContent />
                             </TabSwitch>
-                        </PanelContainer>
+                        </PaneContainer>
                     </Col>
                 </Row>
             </Container>
