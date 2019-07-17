@@ -20,7 +20,7 @@ const DashboardPage = () => {
                     <Col s='12' m='6' l='4'>
                         <IncomeChart />
                     </Col>
-                    <Col s='12' m='6' l='4'>
+                    <Col style={{ marginTop }} s='12' m='6' l='4'>
                         <ExpensesChart />
                     </Col>
                     <Col s='12' m='6' l='4'>
