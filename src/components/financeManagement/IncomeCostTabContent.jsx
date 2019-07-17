@@ -3,7 +3,6 @@ import { Icon, Row, Col, Button, Container } from 'react-materialize';
 
 import BtnPanel from '../shared/BtnPanel';
 import DataTable from '../shared/DataTable';
-import RowForm from './RowForm';
 
 const IncomeTab = ({ rowsNotSelected=true }) => {
     const headings = [
@@ -26,11 +25,11 @@ const IncomeTab = ({ rowsNotSelected=true }) => {
     ];
 
     return (
-        <Container style={{ marginTop: 5 }}>
+        <Container style={{ marginTop: 5, width: '99%' }}>
             <Row style={{ marginBottom: 0, marginTop: 10 }}>
                 <Col>
                     <BtnPanel>
-                        <Button waves='light' className='deep-purple'>
+                        <Button waves='purple' className='deep-purple'>
                             Adiciona Receita
                             <Icon right>add_circle_outline</Icon>
                         </Button>
@@ -42,7 +41,11 @@ const IncomeTab = ({ rowsNotSelected=true }) => {
                 </Col>
             </Row>
 
-            <DataTable headings={headings} rows={rows} RowForm={RowForm} />
+            <Row>
+                <Col s='12'>
+                    <DataTable headings={headings} rows={rows} />
+                </Col>
+            </Row>
 
         </Container>
     );

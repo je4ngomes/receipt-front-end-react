@@ -7,7 +7,7 @@ const TabSwitch = ({ children, tabsTitle=[] }) => {
         <Tabs className="z-depth-1 tabs-fixed-width transparent">
             {Children.map(
                 children, 
-                (child, i) => (<Tab className='white-text' title={tabsTitle[i]}>{child}</Tab>)
+                (child, i) => (<Tab title={tabsTitle[i]}>{child}</Tab>)
             )}
         </Tabs>
     );
