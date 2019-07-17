@@ -1,6 +1,6 @@
 import React from 'react';
 import { Collection, CollectionItem, Icon } from 'react-materialize';
-import PanelContainer from '../../shared/PanelContainer';
+import PaneContainer from '../../shared/PaneContainer';
 
 const RapidAccess = (props) => {
     const classes = 'waves-effect waves-light indigo-text text-lighten-3';
@@ -10,7 +10,7 @@ const RapidAccess = (props) => {
     };
 
     return (
-        <PanelContainer title='Acesso Rápido' alignTitle='left'>
+        <PaneContainer title='Acesso Rápido' textAlign='left'>
             <Collection style={{ border: 'none' }}>
                 <CollectionItem 
                     className={classes} 
@@ -29,8 +29,8 @@ const RapidAccess = (props) => {
                     <Icon className='blue-text' right>print</Icon>
                 </CollectionItem>
             </Collection>
-        </PanelContainer>
+        </PaneContainer>
     );
-}
+};
 
 export default RapidAccess;

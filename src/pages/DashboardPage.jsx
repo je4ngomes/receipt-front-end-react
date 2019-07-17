@@ -1,29 +1,31 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-materialize';
 
-import Sidebar from '../components/dashboard/Sidebar';
+import '../assets/css/MediaQueries.css';
+import Sidebar from '../components/shared/Sidebar';
 import MonthlyChart from '../components/charts/MonthlyChart';
 import Header from '../components/shared/Header';
 import SelectYear from '../components/shared/SelectYear';
 import IncomeChart from '../components/charts/IncomeChart';
 import ExpensesChart from '../components/charts/ExpensesChart';
 import RapidAccess from '../components/dashboard/RapidAccess';
+import Footer from '../components/shared/Footer';
 
 const DashboardPage = () => {
     return (
-        <>
-            <Sidebar />  
+        <div className='sidebar__padding'>
+            <Sidebar />
             <SelectYear style={{ position: 'absolute', right: 30, top: 15 }} />
             <Header title='Dashboard' />
             <Container>
-                <Row>
-                    <Col s='12' m='6' l='4'>
+                <Row className='cols__margin__top'>
+                    <Col s={12} m={6} l={4}>
                         <IncomeChart />
                     </Col>
-                    <Col style={{ marginTop }} s='12' m='6' l='4'>
+                    <Col s={12} m={6} l={4}>
                         <ExpensesChart />
                     </Col>
-                    <Col s='12' m='6' l='4'>
+                    <Col s={12} m={6} l={4}>
                         <RapidAccess />
                     </Col>
                 </Row>
@@ -33,7 +35,8 @@ const DashboardPage = () => {
                     </Col>
                 </Row>
             </Container>
-        </>
+            <Footer />
+        </div>
     );
 };
 

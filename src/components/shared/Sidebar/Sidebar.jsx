@@ -5,6 +5,7 @@ import {
     Icon
  } from 'react-materialize';
  import { makeStyles } from '@material-ui/styles';
+ import { Link } from 'react-router-dom';
 
  import userLogo from '../../../assets/images/user.jpg';
  import userCover from '../../../assets/images/userCover.jpg';
@@ -33,18 +34,26 @@ const Sidebar = () => {
                 email: 'john.doe@gmail.com'
             }} />
 
-            <SideNavItem waves>
-                <Icon className='grey-text text-lighten-2'>home</Icon> Home
-            </SideNavItem>
+            <li> 
+                <Link className='waves-effect' to='/dashboard'>
+                    <Icon className='grey-text text-lighten-2'>home</Icon>
+                    Home
+                </Link>
+            </li>
 
             <SideNavItem className='purple divider' divider></SideNavItem>
 
             <SideNavItem subheader>
                <span className='grey-text'>Finaceiro</span>
             </SideNavItem>
-            <SideNavItem waves href="#!third">
-                <Icon className='purple-text text-lighten-2'>receipt</Icon> Despesas e Receitas
-            </SideNavItem>
+
+            <li> 
+                <Link className='waves-effect' to='/dashboard/finance'>
+                    <Icon className='purple-text text-lighten-2'>receipt</Icon>
+                    Despesas e Receitas
+                </Link>
+            </li>
+
             <SideNavItem waves href="#!third">
                 <Icon className='green-text text-accent-3'>bar_chart</Icon> Relatório Financeiro
             </SideNavItem>

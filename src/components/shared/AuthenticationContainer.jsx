@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row } from 'react-materialize';
 
 import topLeftCorner from '../../assets/images/top-left-corner.png';
@@ -13,9 +13,9 @@ const Authentication = (props) => {
                 {props.children}
             </Row>
             <ImgCorner>
-                <img src={topLeftCorner} cornerPos='top__left'/>
-                <img src={bottomLeftCorner} cornerPos='bottom__left'/>
-                <img src={bottomRightCorner} cornerPos='bottom__right'/>
+                <img src={topLeftCorner} alt='' cornerPos='top__left'/>
+                <img src={bottomLeftCorner} alt='' cornerPos='bottom__left'/>
+                <img src={bottomRightCorner} alt='' cornerPos='bottom__right'/>
             </ImgCorner>
         </Container>
     );

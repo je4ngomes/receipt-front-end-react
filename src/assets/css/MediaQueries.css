@@ -1,0 +1,9 @@
+@media only screen and (max-width : 992px) {
+	header, .sidebar__padding, footer {
+		padding-left: 0;
+	}
+
+    .cols__margin__top div {
+        margin-top: 1rem;
+    }
+}

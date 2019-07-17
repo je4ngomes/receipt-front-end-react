@@ -1,15 +1,33 @@
 .container {
-    width: 90%;
+    width: 95%;
 }
 
-header, #root, footer {
+header, .sidebar__padding, footer {
 	padding-left: 300px;
 }
 
-@media only screen and (max-width : 992px) {
-	header, #root, footer {
-		padding-left: 0;
-	}
+footer {
+    clear: both;
+    position: relative;
+    margin-top: -200px;
+}
+
+.tabs .tab a{
+    color:#b39ddb;
+} 
+
+.tabs .tab a:hover {
+    color:#9575cd;
+}
+
+
+.tabs .tab a.active {
+    background-color:rgba(105, 19, 255, 0.11);
+    color:#7e57c2;
+}
+
+.tabs .indicator {
+    background-color:#673ab7;
 }
 
 label span {
@@ -17,22 +35,25 @@ label span {
 }
 
 .inputField:focus + label {
-    color: #e91e63 !important;
+    color: #b39ddb !important;
 }
 
 .inputField {
     color: #fff;
 }
 
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: relative;
+}
 input[type="checkbox"].filled-in:checked + span:not(.lever):after {
-    border: 2px solid #e91e63;  
-    background-color: #e91e63;
+    border: 2px solid #7e57c2;  
+    background-color: #7e57c2;
 }
 
 /* label underline focus color */
 .inputField:focus {
-    border-bottom: 1px solid #e91e63 !important;
-    box-shadow: 0 1px 0 0 #e91e63 !important;
+    border-bottom: 1px solid #7e57c2 !important;
+    box-shadow: 0 1px 0 0 #7e57c2 !important;
 }
 
 .gradient_vicious_stance {
@@ -54,4 +75,26 @@ input[type="checkbox"].filled-in:checked + span:not(.lever):after {
 .floatingEffect {
     transform: translatey(0px);
 	animation: float 6s ease-in-out infinite;
+}
+
+/* SELECT STYLE */
+
+.select-wrapper input {
+    color: #fff !important;
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 2px solid #7e57c2;
+}
+
+.dropdown-content li > span {
+    color: #fff !important;
+}
+
+.dropdown-content  {
+    background: #303741;
+}
+
+td, th {
+    padding: 10px 5px;
 }

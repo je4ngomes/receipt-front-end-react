@@ -2,15 +2,15 @@ import React from 'react';
 import {
   PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer
 } from 'recharts';
-import PanelContainer from './PanelContainer';
+import PaneContainer from './PaneContainer';
 import SpinnerLiquid from './SpinnerLiquid';
 import { renderLoader, customLegendColor } from '../../utils/util';
 
-const IncomeAndExpensesChart = ({ title, data, isLoading =true }) => {
+const IncomeAndExpensesChart = ({ title, data, isLoading }) => {
     const COLORS = ['#673ab7', '#9575cd'];    
     
     return (
-        <PanelContainer title={title}>
+        <PaneContainer title={title}>
             <div style={{ width: '100%', height: 280 }}>
                 { isLoading ? renderLoader(SpinnerLiquid) :
                 <ResponsiveContainer>
@@ -33,7 +33,7 @@ const IncomeAndExpensesChart = ({ title, data, isLoading =true }) => {
                     </PieChart>
                 </ResponsiveContainer>}
             </div>
-        </PanelContainer>
+        </PaneContainer>
     );
 };
 

@@ -7,103 +7,98 @@ const RegisterForm = (props) => {
     const { 
         onChange,
         onSubmit,
-        formData,
-        onClickToggleForm
+        formData
     } = props;
 
     return (
-        <Col s={12} l={6} offset='l3' className="gradient_vicious_stance z-depth-1">
-            <form onSubmit={onSubmit} style={{ padding: '20px 30px', textAlign: 'center' }}>
-                <h2 className="white-text" style={{ fontSize: '32pt' }}>Cadastrar</h2>
+        <form onSubmit={onSubmit} style={{ textAlign: 'center' }}>
+            <Row>
+                <Col s={6}>
+                    <TextInput        
+                        noLayout
+                        label='Nome'
+                        className='inputField'
+                        onChange={onChange}
+                        value={formData.name}
+                        name='name'/>
+                </Col>
+                <Col s={6}>
+                    <TextInput 
+                        noLayout
+                        label='Sobrenome'
+                        className='inputField'
+                        onChange={onChange}
+                        value={formData.lastName}
+                        name='lastName' />
+                </Col>
+            </Row>
 
-                <Row>
-                    <Col s={6}>
-                        <TextInput        
-                            noLayout
-                            label='Nome'
-                            className='inputField'
-                            onChange={onChange}
-                            value={formData.name}
-                            name='name'/>
-                    </Col>
-                    <Col s={6}>
-                        <TextInput 
-                            noLayout
-                            label='Sobrenome'
-                            className='inputField'
-                            onChange={onChange}
-                            value={formData.lastName}
-                            name='lastName' />
-                    </Col>
-                </Row>
+            <Row>
+                <Col s={6}>
+                    <TextInput        
+                        noLayout
+                        label='Usuário'
+                        className='inputField'
+                        onChange={onChange}
+                        value={formData.username}
+                        name='username'/>
+                </Col>
+                <Col s={6}>
+                    <TextInput 
+                        noLayout
+                        email
+                        label='Email'
+                        className='inputField'
+                        onChange={onChange}
+                        value={formData.email}
+                        name='email' />
+                </Col>
+            </Row>
 
-                <Row>
-                    <Col s={6}>
-                        <TextInput        
-                            noLayout
-                            label='Usuário'
-                            className='inputField'
-                            onChange={onChange}
-                            value={formData.username}
-                            name='username'/>
-                    </Col>
-                    <Col s={6}>
-                        <TextInput 
-                            noLayout
-                            email
-                            label='Email'
-                            className='inputField'
-                            onChange={onChange}
-                            value={formData.email}
-                            name='email' />
-                    </Col>
-                </Row>
+            <Row>
+                <Col s={6}>
+                    <TextInput        
+                        noLayout
+                        password
+                        label='Senha'
+                        className='inputField'
+                        onChange={onChange}
+                        value={formData.password}
+                        name='password'/>
+                </Col>
+                <Col s={6}>
+                    <TextInput 
+                        noLayout
+                        password
+                        label='Confirma Senha'
+                        className='inputField'
+                        onChange={onChange}
+                        value={formData.passwordConf}
+                        name='passwordConf'/>
+                </Col>
+            </Row>
 
-                <Row>
-                    <Col s={6}>
-                        <TextInput        
-                            noLayout
-                            password
-                            label='Senha'
-                            className='inputField'
-                            onChange={onChange}
-                            value={formData.password}
-                            name='password'/>
-                    </Col>
-                    <Col s={6}>
-                        <TextInput 
-                            noLayout
-                            password
-                            label='Confirma Senha'
-                            className='inputField'
-                            onChange={onChange}
-                            value={formData.passwordConf}
-                            name='passwordConf'/>
-                    </Col>
-                </Row>
+            <Row>
+                <Col s={12}>
+                    <Button 
+                        style={{ width: '16rem', height: '3rem' }} 
+                        flat
+                        waves='light' 
+                        className="deep-purple lighten-1 white-text"
+                        type="submit">
+                        Registrar
+                    </Button>
+                </Col>
+            </Row>
 
-                <Row>
-                    <Col s={12}>
-                        <Button 
-                            style={{ width: '16rem', height: '3rem' }} 
-                            flat
-                            waves='light' 
-                            className="pink white-text"
-                            type="submit">
-                            Registrar
-                        </Button>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                        <label style={{ fontSize: '11pt' }}>
-                            Ou <Link to='/auth/login' className="pink-text text-accent-2">Entrar</Link>
-                        </label>
-                    </Col>                        
-                </Row>
-            </form>
-        </Col>
+            <Row>
+                <Col>
+                    <label style={{ fontSize: '11pt' }}>
+                        Ou <Link to='/auth/login' className="deep-purple-text text-lighten-3">Entrar</Link>
+                    </label>
+                </Col>                        
+            </Row>
+        </form>
     )
 }
 
