@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Icon, Row, Col, Button, Container } from 'react-materialize';
 
-import BtnPanel from '../shared/BtnPanel';
+import ActionsPanel from '../shared/ActionsPanel';
 import DataTable from '../shared/DataTable';
 
 const IncomeTab = () => {
     const [toggleRemoveBtn, setToggleRemoveBtn] = useState(true);
+    const [state, setState] = useState({ toggleRemoveBtn: true, removeSelectedCheckbox: false });
     const headings = [
         'Vencimento',
         'Descrição',
@@ -18,7 +19,7 @@ const IncomeTab = () => {
     const rows = [[
             '25/07/2019', 
             'Testando pagamento',
-            <span className='green-text accent-3'>R$ 350</span>,
+            <span className='green-text accent-3'>R$ 350.00</span>,
             'Banco do Brasil',
             'Comissão',
             <span className='green-text accent-3'>Sim</span>
@@ -26,32 +27,41 @@ const IncomeTab = () => {
         [
             '25/07/2019', 
             'Testando pagamento',
-            <span className='green-text accent-3'>R$ 350</span>,
-            'Banco do Brasil',
+            <span className='green-text accent-3'>R$ 520.34</span>,
+            'BMG',
             'Comissão',
             <span className='red-text'>Não</span>
         ]
     ];
 
+    const onSelection = (isSelected) => {console.log(isSelected) ;setToggleRemoveBtn(isSelected)};
+
     return (
         <Container style={{ marginTop: 5, width: '98%' }}>
             <Row style={{ marginBottom: 0, marginTop: 10 }}>
                 <Col>
-                    <BtnPanel>
-                        <Button waves='purple' className='deep-purple'>
+                    <ActionsPanel>
+                        <Button 
+                            waves='light' 
+                            className='deep-purple'
+                        >
                             Adiciona Receita
                             <Icon right>add_circle_outline</Icon>
                         </Button>
-                        <Button className='red lighten-1' disabled={toggleRemoveBtn}>
+                        <Button 
+                            waves='light' 
+                            className='red lighten-1' 
+                            disabled={toggleRemoveBtn}
+                        >
                             Remover
                             <Icon right>remove_circle_outline</Icon>
                         </Button>
-                    </BtnPanel>
+                    </ActionsPanel>
                 </Col>
             </Row>
 
 
-            <DataTable headings={headings} rows={rows} />
+            <DataTable headings={headings} rows={rows} onSelection={onSelection} />
 
         </Container>
     );

@@ -1,7 +1,7 @@
 import React, { Children, cloneElement } from 'react';
 import { Row } from 'react-materialize';
 
-const BtnPanel = ({ children }) => {
+const ActionsPanel = ({ children }) => {
     return (
         <Row style={{ marginBottom: 5 }}>
             {Children.map(
@@ -11,4 +11,4 @@ const BtnPanel = ({ children }) => {
     );
 };
 
-export default BtnPanel;
+export default ActionsPanel;

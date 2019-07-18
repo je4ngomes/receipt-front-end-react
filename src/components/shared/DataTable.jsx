@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Table, Checkbox, Icon, Button, TextInput, Select } from 'react-materialize';
+import { Table, Button, TextInput, Select, DatePicker } from 'react-materialize';
 import EditableCells from '../financeManagement/EditableCells';
+import Checkbox from './Checkbox';
 
 
 const toggleAllBox = (overrideStateValues, toThis) => 
@@ -8,12 +9,16 @@ const toggleAllBox = (overrideStateValues, toThis) =>
         Object.entries(overrideStateValues).map(([key, _]) => [key, toThis])
     );
 
-const isBoxNotSelected = (state) =>
-    Object.entries(state).some(([_, val]) => val)
+const isBoxSelected = (state) =>
+    !Object.entries(state).some(([_, val]) => val)
 
-const DataTable = ({ headings, rows, inputs, setToggleRemoveBtn }) => {
-    const toggleAllBoxRef = useRef();
+const isAllBoxSelected = (state) =>
+    Object.entries(state).every(([_, val]) => val)
+
+
+const DataTable = ({ headings, rows, inputs, onSelection }) => {
     const [currentRow, setCurrentRow] = useState({ current: null });
+    const [checkboxAll, setCheckboxAll] = useState(false);
     const [selectedBox, setSelectedBox] = useState(
         rows.reduce((indexs, _, i) => ({ ...indexs, [i]: false }), {})
     );
@@ -24,18 +29,21 @@ const DataTable = ({ headings, rows, inputs, setToggleRemoveBtn }) => {
 
     const handleCheckboxChange = index => 
         e => {
-            
-            setSelectedBox({ ...selectedBox, [index]: !selectedBox[index] })
+            const newState = { ...selectedBox, [index]: !selectedBox[index] };
+            setSelectedBox(newState);
 
-            // setToggleRemoveBtn(isBoxNotSelected(selectedBox))            
+            setCheckboxAll(isAllBoxSelected(newState));        
+
+            onSelection(isBoxSelected(newState));
         } 
 
     const handleCheckAllBoxChange = e => {
-        // console.log(toggleAllBox(selectedBox, e.target.checked))
-        console.log(toggleAllBoxRef.current)
-        setSelectedBox(state => toggleAllBox(state, toggleAllBoxRef.current.checked))
+        setCheckboxAll(prevState => !prevState);
+        const newState = toggleAllBox(selectedBox, e.target.checked);
 
-        // setToggleRemoveBtn(isBoxNotSelected(selectedBox))
+        setSelectedBox(newState);
+
+        onSelection(isBoxSelected(newState));
     };
     
 
@@ -44,7 +52,7 @@ const DataTable = ({ headings, rows, inputs, setToggleRemoveBtn }) => {
 
     const renderEditableCells = () => (
         <EditableCells submitOnClick={() => (0)} cancelOnClick={cancelOnClick} fields={['name']}>
-            <TextInput className='inputField' name='expires_date'/>
+            <DatePicker className='inputField' name='expires_date'/>
             <TextInput className='inputField' name='description'/>
             <TextInput className='inputField' name='cost'/>
             <Select name='paidFrom'>
@@ -62,7 +70,7 @@ const DataTable = ({ headings, rows, inputs, setToggleRemoveBtn }) => {
     const renderHeadingRow = () => (
         <>
             <tr>
-                <th><Checkbox label='' indeterminate ref={toggleAllBoxRef} value='' onChange={handleCheckAllBoxChange} filledIn/></th>
+                <th><Checkbox checked={checkboxAll} onChange={handleCheckAllBoxChange}/></th>
                 {headings.map((header, i) => (<th key={i}>{header}</th>))}
                 <th>Ações</th>
             </tr>
@@ -85,12 +93,15 @@ const DataTable = ({ headings, rows, inputs, setToggleRemoveBtn }) => {
         </>
     );
 
+
+
+
     const renderRow = (row, i) => {
         const isInEditingMode = currentRow.current === i;
-        console.log(selectedBox)
+
         return (
-            <tr key={i} >
-                <td><Checkbox onChange={handleCheckboxChange(i)} checked={selectedBox[i]} value='' label='' filledIn/></td>
+            <tr className='finance' key={i} >
+                <td><Checkbox onChange={handleCheckboxChange(i)} checked={selectedBox[i]} /></td>
                 {
                     isInEditingMode
                         ? renderEditableCells()

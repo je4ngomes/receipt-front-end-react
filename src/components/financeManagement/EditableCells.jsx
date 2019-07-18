@@ -8,8 +8,11 @@ const useStyles = makeStyles({
         '& div': {
             marginTop: 0,
             marginBottom: 0,
-            '& div': {
-                marginTop: -15
+            '& div.select-wrapper': {
+                marginTop: -18
+            },
+            '& div.select-wrapper.select-month, div.select-wrapper.select-year': {
+                marginTop: '0'
             }
         },
         width: 138
@@ -31,14 +34,14 @@ const EditableCells = ({ fields, submitOnClick, cancelOnClick, children }) => {
             )}
             <td className={classes.cellRoot}>
                 <Button 
-                    waves='purple' 
+                    waves='light' 
                     floating 
                     icon='done' 
                     small 
                     className='deep-purple'
                     onClick={submitOnClick.bind(refs)} />
                  <Button 
-                    waves='red' 
+                    waves='light' 
                     floating 
                     icon='clear'
                     small 

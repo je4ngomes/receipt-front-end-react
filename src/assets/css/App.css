@@ -92,9 +92,36 @@ input[type="checkbox"].filled-in:checked + span:not(.lever):after {
 }
 
 .dropdown-content  {
-    background: #303741;
+    background-color: #303741;
+}
+
+.datepicker-date-display {
+    background-color: #303741;
+    color: #9575cd;
+}
+
+.datepicker-footer .confirmation-btns button {
+    color: #7e57c2;
+}
+
+.datepicker-calendar-container {
+    background-color: #232a33;
+}
+
+td[aria-selected=true] .datepicker-day-button {
+    background-color: #7e57c2;
+}
+
+td.is-today button {
+    color: #9575cd;
+}
+
+.caret {
+    fill: #9575cd !important;
 }
 
 td, th {
     padding: 10px 5px;
 }
+
+tr.finance:nth-child(even){background-color: #272e38;}
