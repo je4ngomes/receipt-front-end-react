@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Icon, Row, Col, Button, Container } from 'react-materialize';
 
 import ActionsPanel from '../shared/ActionsPanel';
-import DataTable from '../shared/DataTable';
+import DataTable from '../shared/table/DataTable';
 
 const IncomeTab = () => {
     const [toggleRemoveBtn, setToggleRemoveBtn] = useState(true);
-    const [state, setState] = useState({ toggleRemoveBtn: true, removeSelectedCheckbox: false });
     const headings = [
         'Vencimento',
         'Descrição',
@@ -34,7 +33,7 @@ const IncomeTab = () => {
         ]
     ];
 
-    const onSelection = (isSelected) => {console.log(isSelected) ;setToggleRemoveBtn(isSelected)};
+    const onSelection = (isSelected) => setToggleRemoveBtn(isSelected);
 
     return (
         <Container style={{ marginTop: 5, width: '98%' }}>
@@ -44,6 +43,7 @@ const IncomeTab = () => {
                         <Button 
                             waves='light' 
                             className='deep-purple'
+                            href='#test'
                         >
                             Adiciona Receita
                             <Icon right>add_circle_outline</Icon>

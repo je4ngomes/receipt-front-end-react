@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Table, Button, TextInput, Select, DatePicker } from 'react-materialize';
-import EditableCells from '../financeManagement/EditableCells';
-import Checkbox from './Checkbox';
+import EditableCells from './EditableCells';
+import Checkbox from '../forms/Checkbox';
 
 
 const toggleAllBox = (overrideStateValues, toThis) => 

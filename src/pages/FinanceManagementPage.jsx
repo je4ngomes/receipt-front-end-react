@@ -7,6 +7,8 @@ import Header from '../components/shared/Header';
 import TabSwitch from '../components/shared/TabSwitch';
 import PaneContainer from '../components/shared/PaneContainer';
 import IncomeCostTabContent from '../components/financeManagement/IncomeCostTabContent';
+import InlineInput from '../components/shared/forms/InlineInput';
+
 
 const FinanceManagementPage = () => {
     return (
@@ -30,6 +32,11 @@ const FinanceManagementPage = () => {
                             </TabSwitch>
                         </PaneContainer>
                     </Col>
+                                <Col s={12}>
+                <InlineInput label='Inline' labelColor='red'>
+                    <input className='inputField' type='text' />
+                </InlineInput>
+            </Col>
                 </Row>
             </Container>
             {/* <Footer /> */}

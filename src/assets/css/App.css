@@ -120,8 +120,14 @@ td.is-today button {
     fill: #9575cd !important;
 }
 
+li.disabled {
+    background-color: #3a3f44 !important; 
+}
+
 td, th {
     padding: 10px 5px;
 }
 
-tr.finance:nth-child(even){background-color: #272e38;}
+tr.finance:nth-child(even){
+    background-color: #272e38;
+}

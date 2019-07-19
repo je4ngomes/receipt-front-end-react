@@ -1,6 +1,6 @@
 import React, { Children, createRef, cloneElement } from 'react';
 
-import { Icon, Button } from 'react-materialize';
+import { Button } from 'react-materialize';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
