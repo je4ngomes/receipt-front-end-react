@@ -5,7 +5,7 @@ import '../assets/css/MediaQueries.css';
 import Sidebar from '../components/shared/Sidebar';
 import MonthlyChart from '../components/charts/MonthlyChart';
 import Header from '../components/shared/Header';
-import SelectYear from '../components/shared/SelectYear';
+import YearSelector from '../components/shared/YearSelector';
 import IncomeChart from '../components/charts/IncomeChart';
 import ExpensesChart from '../components/charts/ExpensesChart';
 import RapidAccess from '../components/dashboard/RapidAccess';
@@ -15,7 +15,7 @@ const DashboardPage = () => {
     return (
         <div className='sidebar__padding'>
             <Sidebar />
-            <SelectYear style={{ position: 'absolute', right: 30, top: 15 }} />
+            <YearSelector style={{ position: 'absolute', right: 30, top: 15 }} />
             <Header title='Dashboard' />
             <Container>
                 <Row className='cols__margin__top'>

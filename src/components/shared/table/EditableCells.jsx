@@ -22,27 +22,25 @@ const useStyles = makeStyles({
     }
 });
 
-const EditableCells = ({ fields, submitOnClick, cancelOnClick, children }) => {
+const EditableCells = ({ fields, Inputs, submitOnClick, cancelOnClick, children }) => {
     const classes = useStyles();
     const refs = Object.fromEntries(
                     Object.entries(fields).map(([key]) => [key, createRef()])
                 );
 
-    const cloneInputElement = child => {
-        const { name } = child.props;
+    const cloneInputElement = input => {
+        const { name } = input.props;
 
-        return cloneElement(child, { ref: refs[name], defaultValue: fields[name] });
+        return cloneElement(input, { ref: refs[name], defaultValue: fields[name] });
     }
 
     return (
         <>
-            {Children.map(
-                children, 
-                child => (
-                    <td className={classes.tdRoot}>
-                        {cloneInputElement(child)}
-                    </td>
-                ))}
+            {Inputs.map((input, i) => (
+                <td key={i} className={classes.tdRoot}>
+                    {cloneInputElement(input)}
+                </td>
+            ))}
             <td className={classes.cellRoot}>
                 <Button 
                     waves='light' 

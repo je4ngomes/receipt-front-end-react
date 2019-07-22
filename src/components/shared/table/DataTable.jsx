@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Button, TextInput, Select, DatePicker } from 'react-materialize';
+import { Table, Button } from 'react-materialize';
 import EditableCells from './EditableCells';
 import Checkbox from '../forms/Checkbox';
 
@@ -16,7 +16,7 @@ const isAllBoxSelected = (state) =>
     Object.entries(state).every(([_, val]) => val)
 
 
-const DataTable = ({ headings, rows, inputs, onSelection }) => {
+const DataTable = ({ headings, rows, Inputs, onSelection }) => {
     const [currentRow, setCurrentRow] = useState({ current: null });
     const [checkboxAll, setCheckboxAll] = useState(false);
     const [selectedBox, setSelectedBox] = useState(
@@ -51,21 +51,11 @@ const DataTable = ({ headings, rows, inputs, onSelection }) => {
     const cancelOnClick = () => setCurrentRow({ current: null });
 
     const renderEditableCells = (row) => (
-        <EditableCells submitOnClick={(refs) => console.log(refs)} cancelOnClick={cancelOnClick} fields={row}>
-            <DatePicker className='inputField' name='expires_date'/>
-            <TextInput className='inputField' name='description'/>
-            <TextInput className='inputField' name='cost'/>
-            <Select name='paymentEntity'>
-                <option value="caixa">Caixa</option>
-            </Select>
-            <Select name='category'>
-                <option value="comissao">Comissão</option>
-            </Select>
-            <Select defaultValue='no' name='isPaid' className='deep-purple-text text-lighten-4'>
-                <option value="yes">Sim</option>
-                <option value="no">Não</option>
-            </Select>
-        </EditableCells>
+        <EditableCells 
+            Inputs={Inputs} 
+            submitOnClick={(refs) => console.log(refs)} 
+            cancelOnClick={cancelOnClick} 
+            fields={row} />
     ); 
     const renderHeadingRow = () => (
         <>

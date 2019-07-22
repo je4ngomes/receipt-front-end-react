@@ -6,7 +6,11 @@ import Header from '../components/shared/Header';
 // import Footer from '../components/shared/Footer';
 import TabSwitch from '../components/shared/TabSwitch';
 import PaneContainer from '../components/shared/PaneContainer';
-import IncomeCostTabContent from '../components/financeManagement/IncomeCostTabContent';
+import IncomeCostTab from '../components/financeManagement/IncomeCostTab';
+import FixedCostTab from '../components/financeManagement/FixedCostTab';
+import VariableCostTab from '../components/financeManagement/VariableCostTab';
+import PersonCostTab from '../components/financeManagement/PersonCostTab';
+import YearMonthSelector from '../components/shared/YearMonthSelector';
 
 
 const FinanceManagementPage = () => {
@@ -16,6 +20,13 @@ const FinanceManagementPage = () => {
             <Header title='Controle de Despesas e Receitas' />
             <Container style={{ width: '98%' }}>
                 <Row>
+                    <Col m={11}>
+                        <PaneContainer>
+                            <YearMonthSelector onDateSelection={console.log} />
+                        </PaneContainer>
+                    </Col>
+                </Row>
+                <Row>
                     <Col s={12}>
                         <PaneContainer>
                             <TabSwitch tabsTitle={[
@@ -24,10 +35,10 @@ const FinanceManagementPage = () => {
                                 'Despesas Variáveis', 
                                 'Despesas com Pessoas'
                             ]}>
-                                <IncomeCostTabContent />
-                                <IncomeCostTabContent />
-                                <IncomeCostTabContent />
-                                <IncomeCostTabContent />
+                                <IncomeCostTab />
+                                <FixedCostTab />
+                                <VariableCostTab />
+                                <PersonCostTab />
                             </TabSwitch>
                         </PaneContainer>
                     </Col>

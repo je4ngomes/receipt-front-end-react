@@ -9,6 +9,11 @@ const useStyles = makeStyles({
         '& button': {
             marginRight: 5, 
             marginTop: 5
+        },
+        '& div': {
+            marginRight: 10,
+            position: 'relative',
+            top: 5
         }
     }
 });

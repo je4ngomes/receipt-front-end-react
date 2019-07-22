@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     }
 });
 
-const ModalFinanceForm = ({ header, customPaymentEntityLabel }) => {
+const ModalFinanceForm = ({ header, trigger, customPaymentEntityLabel }) => {
     const classes = useStyles();
     const submitBtn = (
         <Button 
@@ -55,8 +55,9 @@ const ModalFinanceForm = ({ header, customPaymentEntityLabel }) => {
     return (
         <Modal 
             className={classes.modalRoot}
+            trigger={trigger}
             fixedFooter 
-            id="finance_form" 
+            ref={input => input}
             header={header}
             actions={[submitBtn, cancelBtn]}
         >

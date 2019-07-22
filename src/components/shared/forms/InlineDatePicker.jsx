@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import M from 'materialize-css';
 
 import InlineInput from './InlineInput';
 
 
 const InlineDatePicker = (props) => {
+    const datePickerRef = useRef();
     const options = {
         format: 'dd/mm/yyyy',
         container: 'body',
@@ -21,7 +22,7 @@ const InlineDatePicker = (props) => {
 
     useEffect(() => {
         const instance = M.Datepicker.init(
-            document.getElementById('datepicker_323'), 
+            datePickerRef.current, 
             options
         );
 
@@ -29,7 +30,7 @@ const InlineDatePicker = (props) => {
     }, []);
 
     return (
-        <InlineInput {...props} id='datepicker_323'/>
+        <InlineInput {...props} ref={datePickerRef}/>
     );
 };
 

@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { Dropdown, Button, Icon } from 'react-materialize';
 
-const SelectYear = ({ style }) => {
+const YearSelector = ({ style, onYearSelection }) => {
     const [{ 
         isInputEditable, 
-        date 
+        year 
     }, setState] = useState({ 
         isInputEditable: false,
-        date: new Date().getFullYear() 
+        year: new Date().getFullYear() 
     });
-    const inputEl = useRef(null);
+    const inputRef = useRef();
 
     const inc = n => n + 1;
     const dec = n => n - 1;
@@ -26,25 +26,32 @@ const SelectYear = ({ style }) => {
             }} 
             className='browser-default'
             autoFocus 
-            ref={inputEl} 
-            defaultValue={date} 
+            ref={inputRef} 
+            defaultValue={year} 
             type="text"/>
         </form>
     );
 
     const handleTypeYear = e => {
         e.preventDefault();
-        setState({ date, isInputEditable: !isInputEditable });
+        setState({ year, isInputEditable: !isInputEditable });
     }
 
     const handleClick = (fn) => e => {
         e.preventDefault();
-        setState({ isInputEditable: isInputEditable, date: fn(date) });
+        const newState = { isInputEditable: isInputEditable, year: fn(year) };
+
+        setState(newState)
+   
+        onYearSelection(newState.year);
     };
 
     const handleSubmit = e => {
         e.preventDefault();
-        setState({ isInputEditable: !isInputEditable, date: parseInt(inputEl.current.value) });
+
+        setState(
+            { isInputEditable: !isInputEditable, year: parseInt(inputRef.current.value) },
+            () => onYearSelection(year));
     };
 
 
@@ -54,18 +61,18 @@ const SelectYear = ({ style }) => {
                 ? renderInputForm() 
                 : <Dropdown
                     trigger={
-                        <Button className='deep-purple lighten-1' style={{ margin: '-5px 0 0 5px', width: '125px', fontSize: '11pt' }}>
-                            {date}
+                        <Button className='deep-purple' style={{ margin: '-5px 0 0 5px', width: '125px', fontSize: '11pt' }}>
+                            {year}
                             <Icon right>arrow_drop_down</Icon>
                         </Button>
                     }
                 >
-                    <a className='purple-text text-lighten-3' onClick={handleClick(dec)} href='#prevYear'>Ano Anterior</a>
-                    <a className='purple-text text-lighten-3' onClick={handleClick(inc)} href='#nextYear'>Próximo Ano</a>
-                    <a className='purple-text text-lighten-3' onClick={handleTypeYear} href='#typeYear'>Digitar Ano</a>
+                    <a className='purple-text text-lighten-2' onClick={handleClick(dec)} href='#prevYear'>Ano Anterior</a>
+                    <a className='purple-text text-lighten-2' onClick={handleClick(inc)} href='#nextYear'>Próximo Ano</a>
+                    <a className='purple-text text-lighten-2' onClick={handleTypeYear} href='#typeYear'>Digitar Ano</a>
                 </Dropdown>}
         </div>
     );
 };
 
-export default SelectYear;
+export default YearSelector;
