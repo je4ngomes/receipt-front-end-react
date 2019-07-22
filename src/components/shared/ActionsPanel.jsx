@@ -1,12 +1,24 @@
-import React, { Children, cloneElement } from 'react';
+import React, { cloneElement } from 'react';
 import { Row } from 'react-materialize';
+import { makeStyles } from '@material-ui/core/styles'
 
-const ActionsPanel = ({ children }) => {
+
+const useStyles = makeStyles({
+    rowRoot: {
+        marginBottom: 5,
+        '& button': {
+            marginRight: 5, 
+            marginTop: 5
+        }
+    }
+});
+
+const ActionsPanel = ({ actions = [] }) => {
+    const classes = useStyles();
+
     return (
-        <Row style={{ marginBottom: 5 }}>
-            {Children.map(
-                children, child => cloneElement(child, { style: { marginRight: 5, marginTop: 5 } })
-            )}
+        <Row className={classes.rowRoot}>
+            {actions.map((btnElem, i) => cloneElement(btnElem, { key: i }))}
         </Row>
     );
 };

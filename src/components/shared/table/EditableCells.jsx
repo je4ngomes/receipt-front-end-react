@@ -12,7 +12,7 @@ const useStyles = makeStyles({
                 marginTop: -18
             },
             '& div.select-wrapper.select-month, div.select-wrapper.select-year': {
-                marginTop: '0'
+                marginTop: 0
             }
         },
         width: 138
@@ -23,15 +23,26 @@ const useStyles = makeStyles({
 });
 
 const EditableCells = ({ fields, submitOnClick, cancelOnClick, children }) => {
-    const refs = fields.reduce((acc, field) => ({ ...acc, [field]: createRef() }), {});
     const classes = useStyles();
+    const refs = Object.fromEntries(
+                    Object.entries(fields).map(([key]) => [key, createRef()])
+                );
+
+    const cloneInputElement = child => {
+        const { name } = child.props;
+
+        return cloneElement(child, { ref: refs[name], defaultValue: fields[name] });
+    }
 
     return (
         <>
             {Children.map(
                 children, 
-                child => <td className={classes.tdRoot}>{cloneElement(child, { ref: refs[child.name] })}</td>
-            )}
+                child => (
+                    <td className={classes.tdRoot}>
+                        {cloneInputElement(child)}
+                    </td>
+                ))}
             <td className={classes.cellRoot}>
                 <Button 
                     waves='light' 
@@ -39,7 +50,7 @@ const EditableCells = ({ fields, submitOnClick, cancelOnClick, children }) => {
                     icon='done' 
                     small 
                     className='deep-purple'
-                    onClick={submitOnClick.bind(refs)} />
+                    onClick={e => submitOnClick(refs, e)} />
                  <Button 
                     waves='light' 
                     floating 

@@ -27,7 +27,7 @@ const PaneContainer = ({
     const classes = useStyles({ titleSize, titleColor, padding, bg });
     
     return (
-        <Paper className={classes.paperRoot}>
+        <Paper elevation={2} className={classes.paperRoot}>
             {title && (
                 <Typography component="div">
                     <Box 
@@ -44,8 +44,6 @@ const PaneContainer = ({
         </Paper>
     );
 };
-
-
 
 PaneContainer.propTypes = {
     title: PropTypes.string,

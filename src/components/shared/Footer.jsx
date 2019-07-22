@@ -9,7 +9,7 @@ const Footer = () => {
             <Row style={{ marginBottom: 0 }}>
                 <Col m={3}>
                    <span style={{ fontSize: '12pt' }} className='grey-text'>
-                       Created By Jean de Jesus
+                       Created By Cyrax
                     </span>
                 </Col>
                 <Col m={3}>

@@ -3,6 +3,7 @@ import { Icon, Row, Col, Button, Container } from 'react-materialize';
 
 import ActionsPanel from '../shared/ActionsPanel';
 import DataTable from '../shared/table/DataTable';
+import ModalFinanceForm from '../shared/forms/ModalFinanceForm';
 
 const IncomeTab = () => {
     const [toggleRemoveBtn, setToggleRemoveBtn] = useState(true);
@@ -15,54 +16,53 @@ const IncomeTab = () => {
         'Pago'    
     ];
     
-    const rows = [[
-            '25/07/2019', 
-            'Testando pagamento',
-            <span className='green-text accent-3'>R$ 350.00</span>,
-            'Banco do Brasil',
-            'Comissão',
-            <span className='green-text accent-3'>Sim</span>
-        ],
-        [
-            '25/07/2019', 
-            'Testando pagamento',
-            <span className='green-text accent-3'>R$ 520.34</span>,
-            'BMG',
-            'Comissão',
-            <span className='red-text'>Não</span>
-        ]
+    const rows = [{ 
+            expires_date: '25/07/2019',
+            description: 'Testando pagamento',
+            cost: 350.00,
+            paymentEntity: 'Banco do Brasil',
+            category: 'Comissão',
+            isPaid: 'no' 
+        }
     ];
 
     const onSelection = (isSelected) => setToggleRemoveBtn(isSelected);
+
+    const createNewReceiptBtn = (
+        <Button 
+            waves='light' 
+            className='deep-purple modal-trigger'
+            href='#finance_form'
+        >
+            Adiciona Receita
+            <Icon right>add_circle_outline</Icon>
+        </Button>
+    );
+    const removeRegisterBtn = (
+        <Button 
+            waves='light' 
+            className='red lighten-1' 
+            disabled={toggleRemoveBtn}
+        >
+            Remover
+            <Icon right>remove_circle_outline</Icon>
+        </Button>
+    );
 
     return (
         <Container style={{ marginTop: 5, width: '98%' }}>
             <Row style={{ marginBottom: 0, marginTop: 10 }}>
                 <Col>
-                    <ActionsPanel>
-                        <Button 
-                            waves='light' 
-                            className='deep-purple'
-                            href='#test'
-                        >
-                            Adiciona Receita
-                            <Icon right>add_circle_outline</Icon>
-                        </Button>
-                        <Button 
-                            waves='light' 
-                            className='red lighten-1' 
-                            disabled={toggleRemoveBtn}
-                        >
-                            Remover
-                            <Icon right>remove_circle_outline</Icon>
-                        </Button>
-                    </ActionsPanel>
+                    <ActionsPanel actions={[createNewReceiptBtn, removeRegisterBtn]} />
                 </Col>
             </Row>
 
 
             <DataTable headings={headings} rows={rows} onSelection={onSelection} />
 
+        <ModalFinanceForm 
+            header='Nova Receita' 
+            customPaymentEntityLabel='Recebido de' />
         </Container>
     );
 };

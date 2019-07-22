@@ -100,6 +100,10 @@ input[type="checkbox"].filled-in:checked + span:not(.lever):after {
     color: #9575cd;
 }
 
+.datepicker-day-button {
+    color: #d1c4e9;
+}
+
 .datepicker-footer .confirmation-btns button {
     color: #7e57c2;
 }

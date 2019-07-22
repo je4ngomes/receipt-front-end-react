@@ -1,14 +1,14 @@
 import React from 'react';
+import Inline from './Inline';
 
-const InlineInput = ({ label, labelColor, children: inputElem, error }) => (
-    <>
-        <span style={{ color: labelColor, marginRight: 10, fontSize: '16pt' }}>{label}</span>
-        <div class="input-field inline">
-            {inputElem}
-            <label for="first_name"></label>
-            <span class="helper-text" data-error={error}></span>
-        </div>
-    </>
-);
+const InlineInput = ({ type='text', error, ...props }) => {
+    return (
+        <Inline>
+            <input className='inputField' type={type} {...props} />
+            <label></label>
+            <span className="helper-text" data-error={error}></span>
+        </Inline>
+    );
+};
 
 export default InlineInput;

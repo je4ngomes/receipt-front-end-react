@@ -60,9 +60,9 @@ const SelectYear = ({ style }) => {
                         </Button>
                     }
                 >
-                    <a className='purple-text' onClick={handleClick(dec)} href='#prevYear'>Ano Anterior</a>
-                    <a className='purple-text' onClick={handleClick(inc)} href='#nextYear'>Próximo Ano</a>
-                    <a className='purple-text' onClick={handleTypeYear} href='#typeYear'>Digitar Ano</a>
+                    <a className='purple-text text-lighten-3' onClick={handleClick(dec)} href='#prevYear'>Ano Anterior</a>
+                    <a className='purple-text text-lighten-3' onClick={handleClick(inc)} href='#nextYear'>Próximo Ano</a>
+                    <a className='purple-text text-lighten-3' onClick={handleTypeYear} href='#typeYear'>Digitar Ano</a>
                 </Dropdown>}
         </div>
     );

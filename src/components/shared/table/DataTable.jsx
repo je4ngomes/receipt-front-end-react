@@ -50,18 +50,18 @@ const DataTable = ({ headings, rows, inputs, onSelection }) => {
 
     const cancelOnClick = () => setCurrentRow({ current: null });
 
-    const renderEditableCells = () => (
-        <EditableCells submitOnClick={() => (0)} cancelOnClick={cancelOnClick} fields={['name']}>
+    const renderEditableCells = (row) => (
+        <EditableCells submitOnClick={(refs) => console.log(refs)} cancelOnClick={cancelOnClick} fields={row}>
             <DatePicker className='inputField' name='expires_date'/>
             <TextInput className='inputField' name='description'/>
             <TextInput className='inputField' name='cost'/>
-            <Select name='paidFrom'>
+            <Select name='paymentEntity'>
                 <option value="caixa">Caixa</option>
             </Select>
             <Select name='category'>
                 <option value="comissao">Comissão</option>
             </Select>
-            <Select name='paid' className='deep-purple-text text-lighten-4'>
+            <Select defaultValue='no' name='isPaid' className='deep-purple-text text-lighten-4'>
                 <option value="yes">Sim</option>
                 <option value="no">Não</option>
             </Select>
@@ -80,7 +80,7 @@ const DataTable = ({ headings, rows, inputs, onSelection }) => {
 
     const renderShowData = (row, rowIndex) => (
         <>
-            {row.map((data, i) => (<td key={i}>{data}</td>))}
+            {Object.entries(row).map(([_, val], i) => (<td key={i}>{val}</td>))}
             <td>
                 <Button
                     waves='light' 
@@ -104,7 +104,7 @@ const DataTable = ({ headings, rows, inputs, onSelection }) => {
                 <td><Checkbox onChange={handleCheckboxChange(i)} checked={selectedBox[i]} /></td>
                 {
                     isInEditingMode
-                        ? renderEditableCells()
+                        ? renderEditableCells(row)
                         : renderShowData(row, i)
                 }
             </tr>
