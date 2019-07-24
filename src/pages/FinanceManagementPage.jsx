@@ -12,20 +12,12 @@ import VariableCostTab from '../components/financeManagement/VariableCostTab';
 import PersonCostTab from '../components/financeManagement/PersonCostTab';
 import YearMonthSelector from '../components/shared/YearMonthSelector';
 
-
 const FinanceManagementPage = () => {
     return (
         <div className='sidebar__padding'>
             <Sidebar />
             <Header title='Controle de Despesas e Receitas' />
             <Container style={{ width: '98%' }}>
-                <Row>
-                    <Col m={12}>
-                        <PaneContainer>
-                            <YearMonthSelector onDateSelection={console.log} />
-                        </PaneContainer>
-                    </Col>
-                </Row>
                 <Row>
                     <Col s={12}>
                         <PaneContainer>

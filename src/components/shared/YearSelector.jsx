@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Dropdown, Button, Icon } from 'react-materialize';
 
-const YearSelector = ({ style, onYearSelection }) => {
+const YearSelector = ({ style, onYearSelection, btnClass = 'deep-purple' }) => {
     const [{ 
         isInputEditable, 
         year 
@@ -61,7 +61,7 @@ const YearSelector = ({ style, onYearSelection }) => {
                 ? renderInputForm() 
                 : <Dropdown
                     trigger={
-                        <Button className='deep-purple' style={{ margin: '-5px 0 0 5px', width: '125px', fontSize: '11pt' }}>
+                        <Button className={btnClass} style={{ margin: '-5px 0 0 5px', width: '125px', fontSize: '11pt' }}>
                             {year}
                             <Icon right>arrow_drop_down</Icon>
                         </Button>

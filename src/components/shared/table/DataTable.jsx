@@ -83,9 +83,6 @@ const DataTable = ({ headings, rows, Inputs, onSelection }) => {
         </>
     );
 
-
-
-
     const renderRow = (row, i) => {
         const isInEditingMode = currentRow.current === i;
 

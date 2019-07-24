@@ -12,6 +12,7 @@ import {
 import ActionsPanel from '../shared/ActionsPanel';
 import DataTable from '../shared/table/DataTable';
 import ModalFinanceForm from '../shared/forms/ModalFinanceForm';
+import YearMonthSelector from '../shared/YearMonthSelector';
 
 const IncomeCostTab = () => {
     const [toggleRemoveBtn, setToggleRemoveBtn] = useState(true);
@@ -23,8 +24,40 @@ const IncomeCostTab = () => {
         'Categoria',
         'Pago'    
     ];
-    
+
     const rows = [{ 
+            expires_date: '25/07/2019',
+            description: 'Testando pagamento',
+            cost: 350.00,
+            paymentEntity: 'Banco do Brasil',
+            category: 'Comissão',
+            isPaid: 'no' 
+        },
+        { 
+            expires_date: '25/07/2019',
+            description: 'Testando pagamento',
+            cost: 350.00,
+            paymentEntity: 'Banco do Brasil',
+            category: 'Comissão',
+            isPaid: 'no' 
+        },
+        { 
+            expires_date: '25/07/2019',
+            description: 'Testando pagamento',
+            cost: 350.00,
+            paymentEntity: 'Banco do Brasil',
+            category: 'Comissão',
+            isPaid: 'no' 
+        },
+        { 
+            expires_date: '25/07/2019',
+            description: 'Testando pagamento',
+            cost: 350.00,
+            paymentEntity: 'Banco do Brasil',
+            category: 'Comissão',
+            isPaid: 'no' 
+        },
+        { 
             expires_date: '25/07/2019',
             description: 'Testando pagamento',
             cost: 350.00,
@@ -77,8 +110,13 @@ const IncomeCostTab = () => {
     );
 
     return (
-        <Container style={{ marginTop: 5, width: '98%' }}>
-            <Row style={{ marginBottom: 0, marginTop: 10 }}>
+        <Container style={{ marginTop: 5, width: '99%' }}>
+            <Row>
+                <Col>
+                    <YearMonthSelector onDateSelection={state => state} />                    
+                </Col>
+            </Row>
+            <Row style={{ marginBottom: 0, marginTop: 10, marginLeft: 5 }}>
                 <Col>
                     <ActionsPanel actions={[createNewRegisterModal, removeRegisterBtn]} />
                 </Col>

@@ -28,14 +28,13 @@ const YearMonthSelector = ({ onDateSelection }) => {
  
 
     const monthsBtn = [
-        "Jan", "Feb", "Mar", 
+        "Jan", "Fev", "Mar", 
         "Abr", "Mai", "Jun", 
         "Jul", "Ago", "Set", 
         "Out", "Nov", "Dez"
     ].map((monthLabel, i) => (
         <Button
             onClick={handleClick}
-            style={{ width: 65 }} 
             className={`deep-purple ${month === i && 'darken-4'}`} 
             value={i}
         >
@@ -45,7 +44,12 @@ const YearMonthSelector = ({ onDateSelection }) => {
 
     return (
         <div style={{ marginLeft: 15 }}>
-            <ActionsPanel actions={[<YearSelector onYearSelection={onYearSelection} style={{ display: 'inline' }} />, ...monthsBtn]} />
+            <ActionsPanel actions={[
+                <YearSelector 
+                    onYearSelection={onYearSelection} 
+                    style={{ display: 'inline' }} />, 
+                ...monthsBtn
+            ]} />
         </div>
     );
 };

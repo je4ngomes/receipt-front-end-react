@@ -12,6 +12,7 @@ import {
 import ActionsPanel from '../shared/ActionsPanel';
 import DataTable from '../shared/table/DataTable';
 import ModalFinanceForm from '../shared/forms/ModalFinanceForm';
+import YearMonthSelector from '../shared/YearMonthSelector';
 
 const PersonCostTab = () => {
     const [toggleRemoveBtn, setToggleRemoveBtn] = useState(true);
@@ -77,8 +78,13 @@ const PersonCostTab = () => {
     );
 
     return (
-        <Container style={{ marginTop: 5, width: '98%' }}>
-            <Row style={{ marginBottom: 0, marginTop: 10 }}>
+        <Container style={{ marginTop: 5, width: '99%' }}>
+            <Row>
+                <Col>
+                    <YearMonthSelector onDateSelection={state => state} />                    
+                </Col>
+            </Row>
+            <Row style={{ marginBottom: 0, marginTop: 10, marginLeft: 5 }}>
                 <Col>
                     <ActionsPanel actions={[createNewRegisterModal, removeRegisterBtn]} />
                 </Col>
