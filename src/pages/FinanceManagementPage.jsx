@@ -20,7 +20,7 @@ const FinanceManagementPage = () => {
             <Header title='Controle de Despesas e Receitas' />
             <Container style={{ width: '98%' }}>
                 <Row>
-                    <Col m={11}>
+                    <Col m={12}>
                         <PaneContainer>
                             <YearMonthSelector onDateSelection={console.log} />
                         </PaneContainer>

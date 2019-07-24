@@ -34,8 +34,9 @@ const YearMonthSelector = ({ onDateSelection }) => {
         "Out", "Nov", "Dez"
     ].map((monthLabel, i) => (
         <Button
-            onClick={handleClick} 
-            className={`deep-purple ${month === i && 'darken-3'}`} 
+            onClick={handleClick}
+            style={{ width: 65 }} 
+            className={`deep-purple ${month === i && 'darken-4'}`} 
             value={i}
         >
             {monthLabel}

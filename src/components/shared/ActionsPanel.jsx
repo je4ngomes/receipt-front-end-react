@@ -11,7 +11,7 @@ const useStyles = makeStyles({
             marginTop: 5
         },
         '& div': {
-            marginRight: 10,
+            marginRight: 20,
             position: 'relative',
             top: 5
         }
