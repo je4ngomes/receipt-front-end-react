@@ -124,6 +124,18 @@ td.is-today button {
     fill: #9575cd !important;
 }
 
+.datepicker-controls button {
+    border-radius: 100%;
+}
+
+.datepicker-controls button svg {
+    fill: #fff;
+}
+
+.datepicker-controls button:focus {
+    background-color: #9575cd;
+}
+
 li.disabled {
     background-color: #3a3f44 !important; 
 }
