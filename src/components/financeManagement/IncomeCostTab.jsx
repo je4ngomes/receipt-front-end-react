@@ -44,7 +44,7 @@ const IncomeCostTab = () => {
         { 
             expires_date: '25/07/2019',
             description: 'Testando pagamento',
-            cost: 350.00,
+            cost: -50.00,
             paymentEntity: 'Banco do Brasil',
             category: 'Comissão',
             isPaid: 'no' 
@@ -55,7 +55,7 @@ const IncomeCostTab = () => {
             cost: 350.00,
             paymentEntity: 'Banco do Brasil',
             category: 'Comissão',
-            isPaid: 'no' 
+            isPaid: 'yes' 
         },
         { 
             expires_date: '25/07/2019',

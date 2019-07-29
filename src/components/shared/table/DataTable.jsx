@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Table, Button } from 'react-materialize';
+
+import { spanColor } from '../../../utils/util';
 import EditableCells from './EditableCells';
 import Checkbox from '../forms/Checkbox';
 
@@ -10,11 +12,24 @@ const toggleAllBox = (overrideStateValues, toThis) =>
     );
 
 const isBoxSelected = (state) =>
-    !Object.entries(state).some(([_, val]) => val)
+    !Object.entries(state).some(([_, val]) => val);
 
 const isAllBoxSelected = (state) =>
-    Object.entries(state).every(([_, val]) => val)
+    Object.entries(state).every(([_, val]) => val);
 
+const orderBy = (prop, order) => {
+    const sort = (objA, objB) => (
+        objA[prop] < objB[prop] 
+            ? -1
+            : (
+                objA[prop] > objB[prop] 
+                    ? 1
+                    : 0
+            )
+    );
+
+    return (a, b) => order === 'asc' ? sort(a, b) : -sort(a, b);
+};
 
 const DataTable = ({ headings, rows, Inputs, onSelection }) => {
     const [currentRow, setCurrentRow] = useState({ current: null });
@@ -70,7 +85,21 @@ const DataTable = ({ headings, rows, Inputs, onSelection }) => {
 
     const renderShowData = (row, rowIndex) => (
         <>
-            {Object.entries(row).map(([_, val], i) => (<td key={i}>{val}</td>))}
+            {Object.entries(row).map(([key, val], i) => {
+                switch(key) {
+                    case 'isPaid':
+                        return val !== 'no' 
+                            ? (<td key={i}>{spanColor('#66bb6a', 'Sim')}</td>)
+                            : (<td key={i}>{spanColor('#ef5350', 'Não')}</td>);
+                    
+                    case 'cost':
+                        return val >= 0
+                            ? (<td key={i}>{spanColor('#66bb6a', `R$ ${val}`)}</td>)
+                            : (<td key={i}>{spanColor('#ef5350', `R$ ${val}`)}</td>);
+                    
+                    default: return (<td key={i}>{val}</td>);
+                }
+            })}
             <td>
                 <Button
                     waves='light' 
