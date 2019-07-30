@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import { 
     Icon, 
-    Row, 
-    Col, 
     Button, 
-    Container, 
     TextInput, 
     Select, 
     DatePicker } from 'react-materialize';
 
-import ActionsPanel from '../shared/ActionsPanel';
-import DataTable from '../shared/table/DataTable';
 import ModalFinanceForm from '../shared/forms/ModalFinanceForm';
-import YearMonthSelector from '../shared/YearMonthSelector';
+import ContentTab from '../shared/ContentTab';
 
-const VariableCostTab = () => {
+const PersonCostTab = () => {
     const [toggleRemoveBtn, setToggleRemoveBtn] = useState(true);
     const headings = [
         'Vencimento',
@@ -35,7 +30,7 @@ const VariableCostTab = () => {
         }
     ];
 
-    const Inputs = [
+    const inputs = [
         <DatePicker className='inputField' name='expires_date'/>,
         <TextInput className='inputField' name='description'/>,
         <TextInput className='inputField' name='cost'/>,
@@ -51,53 +46,30 @@ const VariableCostTab = () => {
         </Select>
     ];
 
-    const createNewRegisterModal = (
+    const modal = (
         <ModalFinanceForm
             trigger={(
                 <Button 
                     waves='light' 
                     className='deep-purple'
                 >
-                    Adiciona Despesa Variável
+                    Adiciona Despesa com Pessoas
                     <Icon right>add_circle_outline</Icon>
                 </Button>
             )}
-            header='Nova Despesa Varíavel' 
+            header='Nova Despesa com Pessoas' 
             customPaymentEntityLabel='Pago a' />
 
     );
-    const removeRegisterBtn = (
-        <Button 
-            waves='light' 
-            className='red lighten-1' 
-            disabled={toggleRemoveBtn}
-        >
-            Remover
-            <Icon right>remove_circle_outline</Icon>
-        </Button>
-    );
 
     return (
-        <Container style={{ marginTop: 5, width: '99%' }}>
-            <Row>
-                <Col>
-                    <YearMonthSelector onDateSelection={state => state} />                    
-                </Col>
-            </Row>
-            <Row style={{ marginBottom: 0, marginTop: 10, marginLeft: 5 }}>
-                <Col>
-                    <ActionsPanel actions={[createNewRegisterModal, removeRegisterBtn]} />
-                </Col>
-            </Row>
-
-
-            <DataTable 
-                headings={headings} 
-                rows={rows}
-                Inputs={Inputs} 
-                onSelection={isSelected => setToggleRemoveBtn(isSelected)} />
-        </Container>
+        <ContentTab
+            createNewRegisterModal={modal}
+            onDeleteRow={() => null}
+            onInlineFormSubmit={() => null}
+            onDateSelection={console.log}
+            dataTable={{ rows, headings, inputs }} />
     );
 };
 
-export default VariableCostTab;
+export default PersonCostTab;

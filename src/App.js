@@ -5,7 +5,8 @@ import './assets/css/App.css';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
-import FinanceManagementPage from './pages/FinanceManagementPage';
+import FinancialManagementPage from './pages/FinancialManagementPage';
+import CategoryManagementPage from './pages/CategoryManagementPage';
 
 function App() {
     return (
@@ -15,7 +16,8 @@ function App() {
                     <Route path='/auth/login' component={LoginPage}/>
                     <Route path='/auth/register' component={RegisterPage}/>
                     <Route exact path='/dashboard' component={DashboardPage}/>
-                    <Route path='/dashboard/finance' component={FinanceManagementPage}/>
+                    <Route path='/dashboard/finance' component={FinancialManagementPage}/>
+                    <Route path='/dashboard/category' component={CategoryManagementPage}/>
                 </Switch>
             </BrowserRouter>
         </div>

@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
 import { Col } from 'react-materialize';
 
 import LoginForm from './LoginForm';
 import PaneContainer from '../../shared/PaneContainer';
 import login from '../../../assets/images/login.png';
-
-const useStyles = makeStyles({
-    paperRoot: {
-        backgroundColor: ''
-    }
-});
 
 const Login = (props) => {
     const [state, setState] = useState({

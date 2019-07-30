@@ -6,11 +6,10 @@ import Header from '../components/shared/Header';
 // import Footer from '../components/shared/Footer';
 import TabSwitch from '../components/shared/TabSwitch';
 import PaneContainer from '../components/shared/PaneContainer';
-import IncomeCostTab from '../components/financeManagement/IncomeCostTab';
-import FixedCostTab from '../components/financeManagement/FixedCostTab';
-import VariableCostTab from '../components/financeManagement/VariableCostTab';
-import PersonCostTab from '../components/financeManagement/PersonCostTab';
-import YearMonthSelector from '../components/shared/YearMonthSelector';
+import IncomeCostTab from '../components/financialManagement/IncomeCostTab';
+import FixedCostTab from '../components/financialManagement/FixedCostTab';
+import VariableCostTab from '../components/financialManagement/VariableCostTab';
+import PersonCostTab from '../components/financialManagement/PersonCostTab';
 
 const FinanceManagementPage = () => {
     return (

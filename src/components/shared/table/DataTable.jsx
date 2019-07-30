@@ -31,7 +31,7 @@ const orderBy = (prop, order) => {
     return (a, b) => order === 'asc' ? sort(a, b) : -sort(a, b);
 };
 
-const DataTable = ({ headings, rows, Inputs, onSelection }) => {
+const DataTable = ({ headings, rows, inputs, onSelection, onInlineFormSubmit }) => {
     const [currentRow, setCurrentRow] = useState({ current: null });
     const [checkboxAll, setCheckboxAll] = useState(false);
     const [selectedBox, setSelectedBox] = useState(
@@ -67,8 +67,8 @@ const DataTable = ({ headings, rows, Inputs, onSelection }) => {
 
     const renderEditableCells = (row) => (
         <EditableCells 
-            Inputs={Inputs} 
-            submitOnClick={(refs) => console.log(refs)} 
+            inputs={inputs} 
+            submitOnClick={onInlineFormSubmit} 
             cancelOnClick={cancelOnClick} 
             fields={row} />
     ); 

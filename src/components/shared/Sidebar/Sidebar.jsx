@@ -58,6 +58,13 @@ const Sidebar = () => {
                 <Icon className='green-text text-accent-3'>bar_chart</Icon> Relatório Financeiro
             </SideNavItem>
 
+            <li> 
+                <Link className='waves-effect' to='/dashboard/category'>
+                    <Icon className='indigo-text text-lighten-2'>category</Icon>
+                    Categorias
+                </Link>
+            </li>
+
             <SideNavItem className='grey darken-2 divider' divider></SideNavItem>
             <SideNavItem waves href="#!settings">
                 <Icon className='blue-text text-lighten-1'>settings</Icon> Configurações

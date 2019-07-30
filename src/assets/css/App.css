@@ -136,6 +136,10 @@ td.is-today button {
     background-color: #9575cd;
 }
 
+.modal-content h4 {
+    font-size: 20pt;
+}
+
 li.disabled {
     background-color: #3a3f44 !important; 
 }
@@ -150,7 +154,7 @@ tr.finance:nth-child(even){
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {

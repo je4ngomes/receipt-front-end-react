@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     }
 });
 
-const EditableCells = ({ fields, Inputs, submitOnClick, cancelOnClick, children }) => {
+const EditableCells = ({ fields, inputs, submitOnClick, cancelOnClick }) => {
     const classes = useStyles();
     const refs = Object.fromEntries(
                     Object.entries(fields).map(([key]) => [key, createRef()])
@@ -36,7 +36,7 @@ const EditableCells = ({ fields, Inputs, submitOnClick, cancelOnClick, children 
 
     return (
         <>
-            {Inputs.map((input, i) => (
+            {inputs.map((input, i) => (
                 <td key={i} className={classes.tdRoot}>
                     {cloneInputElement(input)}
                 </td>
